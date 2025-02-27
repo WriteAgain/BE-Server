@@ -61,7 +61,7 @@ jobs:
               );\"
 
             # 환경 변수 설정 (MySQL 8 URL 사용)
-            echo 'export SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3306/writeagain?serverTimezone=Asia/Seoul&characterEncoding=UTF-8&useSSL=false' >> ~/.bashrc
+            echo 'export SPRING_DATASOURCE_URL=jdbc:mysql://34.64.248.152:3306/writeagain?serverTimezone=Asia/Seoul&characterEncoding=UTF-8&useSSL=false' >> ~/.bashrc
             echo 'export SPRING_DATASOURCE_USERNAME=root' >> ~/.bashrc
             echo 'export SPRING_DATASOURCE_PASSWORD=ktbgroom' >> ~/.bashrc
             echo 'export AI_SERVER_URL=http://35.216.2.205' >> ~/.bashrc
