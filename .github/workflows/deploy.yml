@@ -24,7 +24,6 @@ jobs:
       - name: Deploy to Compute Engine
         run: |
           gcloud compute ssh was --zone=asia-northeast3-a --command="
-            # 백엔드 폴더 이동 또는 클론
             cd BE-Server || git clone https://github.com/WriteAgain/BE-Server.git && cd BE-Server
             git pull origin main
             
@@ -50,7 +49,7 @@ jobs:
             fi
 
             # MySQL 설정 (root 비밀번호 설정 및 DB 생성)
-            sudo mysql -e \"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'ktbgroom';\"
+            sudo mysql -u root -e \"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'ktbgroom';\"
             sudo mysql -u root -p'ktbgroom' -e \"CREATE DATABASE IF NOT EXISTS writeagain;\"
 
             # 테이블 생성
@@ -69,6 +68,7 @@ jobs:
             source ~/.bashrc
 
             # application.yml 자동 생성
+            mkdir -p src/main/resources
             cat <<EOT > src/main/resources/application.yml
             spring:
               datasource:
