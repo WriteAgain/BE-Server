@@ -26,7 +26,7 @@ jobs:
           gcloud compute ssh was --zone=asia-northeast3-a --command="
             cd BE-Server || git clone https://github.com/WriteAgain/BE-Server.git && cd BE-Server
             git pull origin main
-            
+
             # Java 21 설치 (이미 설치된 경우 무시)
             if ! java -version 2>&1 | grep '21.0.6'; then
               sudo apt update
@@ -52,7 +52,6 @@ jobs:
             sudo mysql -u root -e \"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'ktbgroom';\"
             sudo mysql -u root -p 'ktbgroom' -e \"CREATE DATABASE IF NOT EXISTS writeagain;\"
 
-
             # 테이블 생성
             sudo mysql -u root -p 'ktbgroom' -e \"USE writeagain;
               CREATE TABLE IF NOT EXISTS users (
@@ -65,7 +64,7 @@ jobs:
             echo 'export SPRING_DATASOURCE_URL=jdbc:mysql://34.64.248.152:3306/writeagain?serverTimezone=Asia/Seoul&characterEncoding=UTF-8&useSSL=false' >> ~/.bashrc
             echo 'export SPRING_DATASOURCE_USERNAME=root' >> ~/.bashrc
             echo 'export SPRING_DATASOURCE_PASSWORD=ktbgroom' >> ~/.bashrc
-            echo 'export AI_SERVER_URL=http://35.216.2.205' >> ~/.bashrc
+            echo 'export AI_SERVER_URL=http://34.64.121.161' >> ~/.bashrc  # AI 서버의 IP 주소로 설정
             source ~/.bashrc
 
             # application.yml 자동 생성
