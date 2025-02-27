@@ -50,7 +50,7 @@ jobs:
 
             # MySQL 설정 (root 비밀번호 설정 및 DB 생성)
             sudo mysql -u root -e \"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'ktbgroom';\"
-            sudo mysql -u root -p 'ktbgroom' -e \"CREATE DATABASE IF NOT EXISTS writeagain;\"
+            sudo mysql -u root -p'ktbgroom' -e \"CREATE DATABASE IF NOT EXISTS writeagain;\"
 
             # 테이블 생성
             sudo mysql -u root -p'ktbgroom' -e \"USE writeagain;
