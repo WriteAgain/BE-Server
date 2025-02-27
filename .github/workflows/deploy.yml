@@ -64,7 +64,7 @@ jobs:
             echo 'export SPRING_DATASOURCE_URL=jdbc:mysql://34.64.248.152:3306/writeagain?serverTimezone=Asia/Seoul&characterEncoding=UTF-8&useSSL=false' >> ~/.bashrc
             echo 'export SPRING_DATASOURCE_USERNAME=root' >> ~/.bashrc
             echo 'export SPRING_DATASOURCE_PASSWORD=ktbgroom' >> ~/.bashrc
-            echo 'export AI_SERVER_URL=http://34.64.121.161' >> ~/.bashrc  # AI 서버의 IP 주소로 설정
+            echo 'export AI_SERVER_URL=http://<AI 서버의 IP>' >> ~/.bashrc  # AI 서버의 IP 주소로 설정
             source ~/.bashrc
 
             # application.yml 자동 생성
